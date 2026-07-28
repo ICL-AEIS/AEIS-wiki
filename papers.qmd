@@ -1,0 +1,5 @@
+---
+title: "Papers"
+---
+
+Knuth says always be literate [@knuth1984].

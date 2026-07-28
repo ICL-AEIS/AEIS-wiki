@@ -1,0 +1,29 @@
+# Quarto build outputs & internal state
+/_site/
+/.quarto/
+
+# Quarto / Knitr / Jupyter auto-generated folders
+*_files/
+*_cache/
+
+# R session files (if using R code blocks)
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Python & Jupyter cache (if using Python code blocks)
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# IDE & Editor settings
+.vscode/
+.idea/

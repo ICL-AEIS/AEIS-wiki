@@ -1,0 +1,11 @@
+---
+title: "AEIS wiki"
+---
+
+Welcome to the AEIS wiki. Explore the different sections:
+
+- **[Induction](induction.qmd)**: Group induction guide.
+- **[Data](data.qmd)**: Our datasets, data pipelines, and storage guidelines for group research projects.
+- **[Tools](tools.qmd)**: Documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members.
+- **[Papers](papers.qmd)**: Some important research paper.
+- **[Group Meetings](group-meetings.qmd)**: General guidelines for group meeting presentations, journal club discussions, and more.

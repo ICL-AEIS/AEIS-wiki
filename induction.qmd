@@ -1,0 +1,66 @@
+---
+title: "Induction"
+---
+
+Group induction guide.
+
+# Subsection
+
+Here's a list:
+
+- Red
+- Green 
+- Blue
+
+# Equations
+Einstein's theory of special relatively:
+
+$E = mc^{2}$
+
+# Contrail
+Here goes a figure.
+
+![A lovely figure](imgs/contrail.jpg)
+
+# How to cross-ref?
+
+See code in @sec-plot for a demo. 
+
+See @eq-stddev (another demo).
+
+## Plot {#sec-plot}
+
+```python
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+```
+
+## Equation {#sec-equation}
+
+$$
+s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}
+$$ {#eq-stddev}
+
+# Notes
+
+::: {.callout-note}
+There are five types of callouts, including:
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+::: {.callout-tip}
+Useful tip.
+:::
+
+::: {.callout-warning}
+Avoid doing this.
+:::
+
+::: {.callout-caution collapse="true"}
+Similar to warning I guess. They can be collapsed as well.
+:::
+
+::: {.callout-important}
+Put something important here.
+:::
