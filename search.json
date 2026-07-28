@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "Here you will find documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members."
+  },
+  {
+    "objectID": "induction.html",
+    "href": "induction.html",
+    "title": "Induction",
+    "section": "",
+    "text": "Group induction guide."
+  },
+  {
+    "objectID": "induction.html#sec-plot",
+    "href": "induction.html#sec-plot",
+    "title": "Induction",
+    "section": "Plot",
+    "text": "Plot\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()"
+  },
+  {
+    "objectID": "induction.html#sec-equation",
+    "href": "induction.html#sec-equation",
+    "title": "Induction",
+    "section": "Equation",
+    "text": "Equation\n\\[\ns = \\sqrt{\\frac{1}{N-1} \\sum_{i=1}^N (x_i - \\overline{x})^2}\n\\tag{1}\\]"
+  },
+  {
+    "objectID": "group-meetings.html",
+    "href": "group-meetings.html",
+    "title": "Group Meetings",
+    "section": "",
+    "text": "General guidelines for group meeting presentations, journal club discussions, and more."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About section."
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
+    "section": "",
+    "text": "This section provides access to our datasets, data pipelines, and storage guidelines."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AEIS wiki",
+    "section": "",
+    "text": "Welcome to the AEIS wiki. Explore the different sections:\n\nInduction: Group induction guide.\nData: Our datasets, data pipelines, and storage guidelines for group research projects.\nTools: Documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members.\nPapers: Some important research paper.\nGroup Meetings: General guidelines for group meeting presentations, journal club discussions, and more."
+  },
+  {
+    "objectID": "papers.html",
+    "href": "papers.html",
+    "title": "Papers",
+    "section": "",
+    "text": "Knuth says always be literate (Knuth 1984).\n\n\n\n\nReferences\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]
