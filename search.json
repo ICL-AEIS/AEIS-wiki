@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "tools.html",
-    "href": "tools.html",
-    "title": "Tools",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AEIS wiki",
     "section": "",
-    "text": "Here you will find documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members."
+    "text": "Welcome to the AEIS wiki. Explore the different sections:\n\nInduction: Group induction guide.\nData: Our datasets, data pipelines, and storage guidelines for group research projects.\nTools: Documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members.\nPapers: Some important research paper.\nGroup Meetings: General guidelines for group meeting presentations, journal club discussions, and more."
   },
   {
     "objectID": "induction.html",
@@ -28,11 +28,11 @@
     "text": "Equation\n\\[\ns = \\sqrt{\\frac{1}{N-1} \\sum_{i=1}^N (x_i - \\overline{x})^2}\n\\tag{1}\\]"
   },
   {
-    "objectID": "group-meetings.html",
-    "href": "group-meetings.html",
-    "title": "Group Meetings",
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
     "section": "",
-    "text": "General guidelines for group meeting presentations, journal club discussions, and more."
+    "text": "This section provides access to our datasets, data pipelines, and storage guidelines."
   },
   {
     "objectID": "about.html",
@@ -42,18 +42,18 @@
     "text": "About section."
   },
   {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data",
+    "objectID": "group-meetings.html",
+    "href": "group-meetings.html",
+    "title": "Group Meetings",
     "section": "",
-    "text": "This section provides access to our datasets, data pipelines, and storage guidelines."
+    "text": "General guidelines for group meeting presentations, journal club discussions, and more."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "AEIS wiki",
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Tools",
     "section": "",
-    "text": "Welcome to the AEIS wiki. Explore the different sections:\n\nInduction: Group induction guide.\nData: Our datasets, data pipelines, and storage guidelines for group research projects.\nTools: Documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members.\nPapers: Some important research paper.\nGroup Meetings: General guidelines for group meeting presentations, journal club discussions, and more."
+    "text": "Here you will find documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members."
   },
   {
     "objectID": "papers.html",
