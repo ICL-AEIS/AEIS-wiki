@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "staticrypt": "^3.5.4"
+  },
+  "scripts": {
+    "deploy_local": "quarto render && staticrypt _site -r -p test --short --directory . --template password_template.html && npx serve _site",
+    "deploy_gh_pages": "quarto render && staticrypt _site -r --short --directory . --template password_template.html && quarto publish gh-pages --no-render"
   }
 }

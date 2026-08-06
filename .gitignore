@@ -17,3 +17,5 @@ venv/
 
 # Node modules
 node_modules/
+
+**/*.quarto_ipynb
