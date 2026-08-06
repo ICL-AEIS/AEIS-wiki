@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "serve": "^14.2.6",
     "staticrypt": "^3.5.4"
   },
   "scripts": {
