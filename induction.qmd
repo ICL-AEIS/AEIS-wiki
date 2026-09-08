@@ -2,65 +2,62 @@
 title: "Induction"
 ---
 
-Group induction guide.
+This page is intended to give an overview of the things everyone in AEIS, but in particular new members, should know.
 
-# Subsection
+AEIS is a research group within the Department of Aeronautics at Imperial. We have [group meetings](group-meetings.qmd) once a week to either share updates or present to each other.
 
-Here's a list:
+Everyone in the group works on similar research, so this wiki contains our institutional knowledge which is useful to be shared between all of us. You may find information on the [Data](data.qmd) and [Tools](tools.qmd) you use on those pages. You'll also find tips on [Writing](writing.qmd) and which [Courses](courses.qmd) to take at Imperial.
 
-- Red
-- Green 
-- Blue
+AEIS has a Junior Leadership Team (JLT) with has a lead and a deputy for each of the following topics:
 
-# Equations
-Einstein's theory of special relatively:
+- Group Meetings
+- Data & Computation
+- Sustainability
 
-$E = mc^{2}$
+You can find more information on them [here](about.qmd#people).
 
-# Contrail
-Here goes a figure.
+# Hardware, compute, and data surveys
 
-![A lovely figure](imgs/contrail.jpg)
+The Data & Computation and Sustainability leads send out a hardware, compute, and data survey to the group every three months. This helps us keep a track of things like:
 
-# How to cross-ref?
+- What computational resources we're using
+- What data we're storing
+- Whether we need support to make our computation easier
+- Whether there are any steps we can take to share information or consolidate resources
 
-See code in @sec-plot for a demo. 
+It helps make our work more focused and sustainable and is part of our [Green DiSC](sustainability.qmd#green-disc) requirements, so please do engage with it when reminded!
 
-See @eq-stddev (another demo).
+# Data storage cleaning
 
-## Plot {#sec-plot}
+Similar to above, the Data & Computation and Sustainability leads conduct data storage cleaning every three months. During this, each member of the group organises their storage directories (end-user, HPC, and cloud), identifies and deletes data they no longer need, and consolidates or minimises data they do need where possible.
 
-```python
-import matplotlib.pyplot as plt
-plt.plot([1,23,2,4])
-plt.show()
-```
+This also helps make our work more focused and sustainable and is part of our [Green DiSC](sustainability.qmd#green-disc) requirements.
 
-## Equation {#sec-equation}
+# Computational sustainability
 
-$$
-s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}
-$$ {#eq-stddev}
+Please familiarise yourself with the [best practices for computational sustainability](sustainability.qmd#best-practices). It's best to put these practices in place as soon as possible because it's not only more sustainable, but makes your work easier too. It also helps make the hardware, compute, and data survey plus data storage cleaning quicker!
 
-# Notes
+# Wellbeing
 
-::: {.callout-note}
-There are five types of callouts, including:
-`note`, `tip`, `warning`, `caution`, and `important`.
-:::
+If you need support or have concerns about anything or anyone including people within AEIS, there are lots of people at Imperial who can help you. Here are some details you might find useful.
 
-::: {.callout-tip}
-Useful tip.
-:::
+**General:**
 
-::: {.callout-warning}
-Avoid doing this.
-:::
+- There are mental health first aiders across the department including
+    - Lisa Kelly - [l.kelly@imperial.ac.uk](l.kelly@imperial.ac.uk)
+    - Jackie O’Neill - [j.oneill@imperial.ac.uk](j.oneill@imperial.ac.uk)
+    - Professor Joaquim Peiro - [j.peiro@imperial.ac.uk](j.peiro@imperial.ac.uk)
+- [College-wide mental health first aiders](https://www.imperial.ac.uk/health-and-wellbeing/mental-health/mental-health-first-aid/)
+- [Department of Aeronautics staff wellbeing page](https://www.imperial.ac.uk/engineering/departments/aeronautics/wellbeing/staff/)
 
-::: {.callout-caution collapse="true"}
-Similar to warning I guess. They can be collapsed as well.
-:::
+**PhD students:**
 
-::: {.callout-important}
-Put something important here.
-:::
+- Student wellbeing adviser: Joe Kilbride, [j.kilbride@imperial.ac.uk](j.kilbride@imperial.ac.uk), Level 1, Room 141B, CAGB
+- Postgraduate research senior tutor: Professor Joaquim Peiro, [j.peiro@imperial.ac.uk](j.peiro@imperial.ac.uk)
+- Tutor for women: Dr Maria Ribera Vicent, [m.ribera-vicent@imperial.ac.uk](m.ribera-vicent@imperial.ac.uk)
+- Faculty of Engineering confidential support for BAME students: Naomi Jackson-Macfarlane, [n.jackson-macfarlane@imperial.ac.uk](n.jackson-macfarlane@imperial.ac.uk)
+- Student representatives
+- [Department of Aeronautics postgraduate student wellbeing page](https://www.imperial.ac.uk/aeronautics/wellbeing/pg/)
+
+Finally, PhD Donuts takes place once a month for PhD students (very important for wellbeing) and there's a coffee machine in both the Level 3 staff room and the kitchenette on Level 1.
+

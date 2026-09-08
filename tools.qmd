@@ -2,4 +2,132 @@
 title: "Tools"
 ---
 
-Here you will find documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members.
+# Contrail Cirrus Prediction tool (CoCiP)
+
+# Aircraft Plume Chemistry, Emissions, and Microphysics Model (APCEMM)
+
+# Weather Research & Forecasting model (WRF)
+
+![Image reproduced from WRF website ([link](https://www.mmm.ucar.edu/sites/default/files/styles/extra_large/public/2022-07/mmm-yt-cover.jpg))](imgs/wrf-homepage-image.avif)
+
+The Weather Research & Forecasting model (WRF) is a widely-used numerical weather prediction model (NWP).
+
+WRF is typically used as a regional model meaning it requires boundary conditions (on top of initial conditions) throughout the simulation period. This is what the WRF Preprocessing System (WPS) sets up.
+
+WRF is mostly an atmospheric model. It does not compute SST, vegetation fraction, albedo, or sea ice. Some fields like vegetation fraction and albedo are provided as static data from WPS-GEOG (see @sec-wrfs-components).
+
+Pros of WRF:
+
+- Very flexible - variable resolution, multiple projection options, and loads of physics options
+- Nested domains
+- Native (if outdated) support for coupling with the ESMF and OASIS3-MCT frameworks
+
+Cons of WRF:
+
+- Nightmare to setup
+- Steep learning curve
+- Bugs can be hard to identify
+- Fortran
+
+## WRF's components {#sec-wrfs-components}
+
+This is a brief outline. Read the [user guide](https://www2.mmm.ucar.edu/wrf/users/) for more details.
+
+WRF is made up of two main components: the WRF Preprocessing System (WPS) and the actual WRF model.
+
+WPS includes:
+
+- **geogrid**: sets up the domain projection and ingests static fields from WPS-GEOG; creates `geo_em.d01.nc`, plus others if using nested domains
+- **ungrib**: processes grib files into some kind of intermediary format for WRF by extracting variables listed in the linked Vtable (e.g. `Vtable.GFS`); produces files like `FILE:2019-01-01_00` for each time in the input data
+- **metgrid**: combines the geogrid and ungrib outputs into `met_em.*` NetCDF files
+
+WRF has multiple parts too, only two of which are useful for most people:
+
+- **real**: vertically interpolates the metgrid output (which is still on the same levels as the input data) to the specified model levels and creates `wrfinput` and `wrfbdy` files containing ICs and BCs respectively
+- **wrf**: this is where you finally run the model - yay!
+
+WRF's code is a mess, so I wouldn't recommend diving into understanding it unless you have to. Instead, make sure to read pages like [WRF Physics](https://www2.mmm.ucar.edu/wrf/users/wrf_users_guide/build/html/physics.html) which include information on WRF's schemes and options.
+
+## Installation
+
+The [tutorial](https://www2.mmm.ucar.edu/wrf/OnLineTutorial/) and [user guide](https://www2.mmm.ucar.edu/wrf/users/) provide decent instructions on compiling and running case studies.
+
+You can decide whether you install your own versions of the WRF dependencies (like NetCDF) which the tutorial guides you through or use one installed on your system (e.g. CX3) if available. The benefit of using pre-installed ones is that you don't have to struggle with inter-library and system compatibility. You don't have to use MPICH as in the WRF tutorial; Open MPI also works and is the only one which works on CX3.
+
+You must install WPS in order to run WRF with "real" data.
+
+## Using ERA5 as input data
+
+GFS is the most common input data with which to run WRF, but ERA5 also works. As of 2026, the ECMWF Vtable is out of date, plus you need a file containing ERA5's invariant fields (unless you download land mask, soil height, and soil geopotential with your ERA5 data) and an updated `METGRID.TBL` to do SST and skintemp interpolation correctly. All of these materials can be found [here](https://github.com/jcbart/WRF-materials-for-ERA5).
+
+## Troubleshooting
+
+This is a non-exhaustive list of the most common issues encountered with WRF. Please add as you see fit, but only remove if you are certain the issue is no longer relevant.
+
+### Libraries
+
+- `netcdf.inc` doesn't exist (required for library compatibility tests): NetCDF hasn't built properly, look in the output.
+- General installation issues:
+	- Ensure `FCFLAGS` and `FFLAGS` are `"-m64 -fallow-argument-mismatch"`.
+	- Ensure `LDFLAGS` points to library folders `"-L$NETCDF/lib -L$DIR/grib2/lib"`.
+	- Ensure `CPPFLAGS` points to include folders `"-I$NETCDF/include -I$DIR/mpich/include -I$DIR/grib2/include -fcommon"`.
+- `gcc: error: unrecognized command line option '-V'`: probably GCC version issue, never got to the bottom of it.
+- There's a million and one problems, just keep reading the logs and googling.
+- Lots of problems are caused by library compatibilities with GCC, 12.3.0 worked in the end.
+
+
+### Compiling WRF and WPS
+
+- Fails because number of CPUs exceeded: default is 2 so do `ncpus=2` and add `-j 2` to the command.
+- If reconfiguring/recompiling, run `./clean -a` before `./configure`.
+- General compilation issues:
+	- Ensure same GCC version is used for libraries and compilation.
+
+### Running WPS
+
+Ungrib issues:
+
+- Check the correct Vtable is linked by doing `realpath Vtable` in the WPS folder. Should show the path to the true Vtable.
+- Use `ungrib.log` to see which variables have been identified.
+
+Geogrid issues:
+
+- Geogrid fails with `ERROR: Error in ext_pkg_write_field` (if `namelist.wps` has `debug_level=1000`, may also see `WRF_DEBUG: NetCDF error: Operation not permitted`): NetCDF hadn't installed properly, check the library installation logs better! Even when it says "congratulations library installed", sometimes things have failed.
+
+Metgrid issues:
+
+- Ensure it's reading in all ungribbed files you need at the same time with `fg_name`.
+- `ERROR: Missing values encountered in interpolated fields. Stopping.`: probably not meteorological data covering the whole domain. Make domain smaller or get extra data.
+- If using ERA5 data, ensure SST and skintemp are interpolated correctly. Get the `ERA5_INVARIANT` file and updated `METGRID.TBL` from [here](https://github.com/jcbart/WRF-materials-for-ERA5).
+- Check interpolation around land mask using `ncview`! There should be no borders with values ~1e30.
+
+General issues:
+
+- Check `namelist.wps` has the right names in the right places, the `namelist.wps.all_options` file shows where they should be (N.B. the optional geogrid path is wrong online).
+
+
+### Running WRF
+
+`real.exe` issues:
+
+- `not enough info for a p sfc computation`: If it also says `ERROR in psfc: flag_psfc = 1, flag_soilhgt = 0, flag_slp = 0, sfcp_to_sfcp = F`, you need to find mean sea level pressure (slp) values and include them in metgrid.
+- `not enough eta levels to reach p_top`: just make `e_vert` higher or lower `p_top_requested` as suggested in the output.
+- `Could not find level above ground`: surface pressure is probably negative in some areas e.g. because the surface pressure used is from ERA5-Land so is not valid for sea. Fix this by using PSFC which is valid everywhere (e.g. from ERA5 hourly data on single levels).
+- `grid%tsk` unreasonable error and values of ~1e30: metgrid has interpolated the skin temperature values (which are over land) or the SST values (which are over water) badly or used the wrong mask for them. Ensure `constants_name = 'ERA5_INVARIANT'` is in `&metgrid` and use the `METGRID_ERA5.TBL` from [here](https://github.com/jcbart/WRF-materials-for-ERA5) to correct masking. **Even a non-fatal `error in grid%tsk` in `rsl.out.0000` is still wrong!** Suck it up, go back to metgrid, and fix it - **even if wrfinput_d01 looks fine!**
+- Program not doing anything: your code changes probably screwed everything, even if you only changed something you believed was part of `wrf.exe`.
+
+`wrf.exe` issues:
+
+- For running with multiple CPUs, MPI must be executed explicitly with `mpiexec -np num_cpus ./wrf.exe`. `mpirun` is used interchangeably with `mpiexec`. To check it has run with multiple CPUs, look for `rsl` files in the `em_real` folder.
+- Segmentation fault: may be using too few cpus, the WRF forums say "((e_we)/100) * ((e_sn)/100) = least amount of processors you should use"
+- Program not doing anything: your code changes probably screwed everything.
+- Other segmentation errors or floating point exceptions:
+	- Sometimes input data issues
+- General issues:
+	- If running MPI, do a square number of CPUs since WRF prefers this.
+	- You can normally get away with using fewer CPUs than suggested, but change it if it crashes.
+	- Ensure time step follows $dt$ (s) $\leq 6 \cdot dx$ (km) and radiation time step follows $dt$ (min) $\leq dx$ (km), though you can normally get away with higher.
+	- Don't compile with full debugging option `-D` (i.e. with floating point exception errors etc) because the radar module will crash! Raised as an issue 2025-09-23 (see [here](https://github.com/wrf-model/WRF/issues/2248)). Even after this was fixed, the `-D` option is still prone to breaking. Try recompiling individual WRF files with debugging flags instead by identifying the compilation line in `compile.log` and adding debug flags to it.
+
+# Earth System Modeling Framework (ESMF)
+

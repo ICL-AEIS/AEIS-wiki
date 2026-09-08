@@ -2,4 +2,29 @@
 title: "About"
 ---
 
-About section.
+AEIS (the Aerospace Environmental Impacts Simulation group, pronounced "ace") is a research group within the Department of Aeronautics, Faculty of Engineering, at Imperial. We use models and observations to understand and reduce the impacts of aviation on the environment.
+
+You can find more information about AEIS, our members, and what we get up to on our [Imperial webpage](https://www.imperial.ac.uk/aerospace-environmental-impacts/).
+
+Information on group meetings can be found [here](group-meetings.qmd). 
+
+## People
+
+AEIS has two permanent staff members:
+
+- **Seb** is the group leader.
+- **Manuela** is our project manager who oversees some of the projects in the group and generally keeps us organised.
+
+AEIS has a Junior Leadership Team (JLT) with three roles, each supported by a deputy:
+
+- **Group Meetings**: The Group Meetings lead organises group meetings and socials.
+    - **Lead**: Marek
+    - **Deputy**: Caleb
+- **Data & Computation**: The Data & Computation lead promotes good data storage and computation practices and works with the Sustainability lead to audit the group's hardware, compute, and data resources.
+    - **Lead**: Hamid
+    - **Deputy**: Uttam
+- **Sustainability**: The Sustainability lead encourages environmentally sustainable practices within the group, works with the Data & Computation lead to audit the group's hardware, compute, and data resources, and pursues [Green DiSC](https://www.software.ac.uk/GreenDiSC) certification.
+    - **Lead**: Jack
+    - **Deputy**: Gavin
+
+The JLT is appointed by Seb.

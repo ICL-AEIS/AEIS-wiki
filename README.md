@@ -7,6 +7,8 @@
 
 Please follow the workflow below whenever adding or editing content.
 
+The courses page is generated automatically from data in `courses-data.json`. Add courses and reviews here making sure not to delete existing data.
+
 
 ## Prerequisites & installation
 
@@ -49,9 +51,10 @@ npm run deploy_local
 ```
 
 This command automatically:
-1. Renders all `.qmd` files using Quarto.
-2. Encrypts the generated HTML files using the local test password: **`test`**.
-3. Starts a local web server (typically at `http://localhost:3000`).
+1. Generate `courses.qmd` from `courses-data.json`
+2. Renders all `.qmd` files using Quarto.
+3. Encrypts the generated HTML files using the local test password: **`test`**.
+4. Starts a local web server (typically at `http://localhost:3000`).
 
 Then navigate to `http://localhost:3000`. Enter the password **`test`** to unlock and preview the website.
 

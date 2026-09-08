@@ -7,21 +7,21 @@ website:
     logo: imgs/logo.png
     left:
       - href: induction.qmd
-        text: Induction
       - href: data.qmd
-        text: Data
       - href: tools.qmd
-        text: Tools
       - href: papers.qmd
-        text: Papers
+      - href: writing.qmd
+      - href: courses.qmd
+      - href: sustainability.qmd
       - href: group-meetings.qmd
-        text: Group Meetings
-      - about.qmd
+      - href: about.qmd
 
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css:
+      - styles.css
+      - courses.css
     toc: true
 
 bibliography: references.bib

@@ -1,0 +1,98 @@
+---
+title: "Sustainability"
+---
+
+AEIS is committed to environmental sustainability. As a group, we aim to minimise the environmental impact of aviation using computational methods, so it is important to us to ensure the environmental benefits of producing our research (such as improvements in technology and changes in policy) outweigh the negative environmental impacts. For this reason, we have guidelines for AEIS group members to follow in two of the most relevant areas: [Computation](#computation) and [Travel](#travel).
+
+Contact the current AEIS group sustainability lead if you have any questions. If you don't know who it is, ask Seb or another member of the group! It is the sustainability lead's role to develop, disseminate, and encourage sustainable practices in the group and to pursue sustainability accreditation.
+
+# Computation
+
+Computation, particularly HPC, and data storage can have a substantial impact, but we don't want to limit the quality of research we produce. For this reason, we have developed a set of best practices and we are pursuing Green DiSC certification.
+
+## Best practices
+
+If you have suggestions for tips to be added to this list, contact the sustainability lead!
+
+### Don't replace devices unless necessary
+
+Use your devices for longer. Even delaying a laptop upgrade for 1 or 2 years has an impact. Also, if your device breaks, try to get it repaired and source used or refurbished devices where possible.
+
+### Optimise your code
+
+If you've written some code which is computationally demanding or that you'll run for a long time, spend some time trying to make it more efficient. A more efficient program also means you get your results faster and can add up in the long term! GenAI models can be helpful for this.
+
+::: {.callout-caution collapse="true"}
+## The Jevons paradox: Greater efficiency -> greater consumption?
+
+[The Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox) is the phenomenon whereby increasing the efficiency of a resource's use increases the overall consumption of the resource. It has been seen observed over more than a century in various fields such as the increase in efficiency of coal use which made coal more attractive as a fuel and so increased its consumption. In your work, don't let the improved efficiency of your code be an excuse for running it unnecessarily!
+:::
+
+### Debug on a small scale
+
+More details on this soon.
+
+### Only run simulations and data analysis once
+
+It can be tempting to make small changes to models, pipelines, or data analysis which mean you need to run computationally expensive code again. Instead, consider carefully whether your code is finished before you run it and test your code on a small amount of data first to check it works. There are often things you'll remember or discover which mean you don't have to rerun expensive code.
+
+### Only store the data you need
+
+It's easy to let data pile up which you don't need to keep. As a reference, storing 1 TB of data on the cloud consumes an estimated 40 to 70 kWh per year which is equivalent to running a modern refrigerator for an entire month ([source, though I'll look for better ones](https://www.ecoflow.com/us/blog/energy-cost-cloud-storage)).
+
+Where possible, don't store preprocessed data when you have already processed the results and avoid storing multiple copies of the same data.
+
+AEIS runs quarterly [data storage cleaning](induction.qmd#data-storage-cleaning) to encourage good practice.
+
+### Calculate your computational carbon footprint
+
+The [Green Algorithms](https://www.green-algorithms.org/) calculator compares the carbon footprint of your code to tree-months of carbon sequestration, kilometres in a car, and fraction of a flight. It can help to have a reference point for the computational work you do so that we better understand the impact we're having. Give it a try with the details of a job you've run.
+
+### GenAI
+
+Generative AI (GenAI) is an invaluable tool to many of us. It is particularly useful for optimising your code. We will have more details on how to use GenAI effectively and how to account for its environmental impact soon.
+
+## Green DiSC
+
+[Green DiSC](https://www.software.ac.uk/GreenDiSC) (Digital Sustainability Certification) is an open-access scheme led by the University of Cambridge. It is designed to encourage people working in research to consider and minimise their computational environmental impact. It has three targets: research groups, research computing infrastructure teams, and central teams, of which the first is relevant to us. The certification has (or will have) three levels: Bronze, Silver, and Gold.
+
+Its priorities for research groups are:
+
+- Purchasing and e-waste policies
+- Computing hardware and infrastructure inventory
+- Computational resource use
+- Dataset inventory and regular data storage cleaning
+- Knowledge amongst group members of best practices for computational sustainability (see [Best practices](#best-practices)!)
+
+Timeline:
+
+- July 2026: Jack Bartlett enrolled AEIS with Green DiSC.
+- November 2026: Apply for Green DiSC Bronze certification.
+
+Seb is the group's Green DiSC representative, but the sustainability lead and deputy are in charge of pursuing the certification.
+
+Useful links:
+
+- [Green DiSC homepage](https://www.software.ac.uk/GreenDiSC)
+- [Green DiSC GitHub](https://github.com/Cambridge-Sustainable-Computing-Lab/greenDiSC)
+- [Green Algorithms](https://www.green-algorithms.org/)
+
+# Travel
+
+Travelling to share our research with and to learn from others is integral to AEIS, but we should still consider the impact of our travel and how to minimise it where we can.
+
+Imperial has a [sustainable travel policy](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/) containing most of this information. Section labels in parentheses below refer to this document.
+
+There is also a Postgraduate Sustainable Travel Fund which can help fund more sustainable travel which is often more expensive. You can find details on [this page](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/).
+
+Steps to consider before travelling:
+
+1. Do I need to travel there? Would I benefit a similar amount by joining the event online? (Section A 1)
+2. Can I combine multiple trips into one by travelling between events or by taking a well deserved holiday at my destination? (Section A 3)
+3. Can I get there in a more sustainable way? Train journeys may be longer, but you can work during them. They may be more expensive than flying, but Imperial's [Postgraduate Sustainable Travel Fund](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/) can help PhD students. The College permits taking higher class rail travel (Section B 1.3) and prohibits flying domestically in the UK if the destination can be reached within 5 hours by train except in extenuating circumstances (Section B 1.2).
+4. If I have to fly, can I fly non-stop even if it's more expensive (Section B 2.2).
+5. Can I fly in the morning so that the cooling effect of any resulting contrails is strongest ~~and so I can take pretty photos of them~~?
+
+As of 2026, Imperial is considering a policy on carbon offsetting for travel, but nothing has yet been implemented.
+
+We are often travelling to the same conferences and events as each other and each year. If you find a sustainable travel option for a particular destination, share it with the group!

@@ -1,0 +1,23 @@
+{
+  "courses": [
+    {
+      "title": "Basic Statistics",
+      "provider": "ECRI",
+      "url": "https://www.imperial.ac.uk/early-career-researcher-institute/learning-and-development/courses-by-programme/research-computing-and-data-science/basic-statistics/",
+      "reviews": [
+        {
+          "reviewer": "Alice",
+          "date": "September 2026",
+          "rating": 3,
+          "text": "Was fine."
+        },
+        {
+          "reviewer": "Bob",
+          "date": "August 2026",
+          "rating": 1,
+          "text": "I hate stats"
+        }
+      ]
+    }
+  ]
+}

@@ -2,10 +2,13 @@
 title: "AEIS wiki"
 ---
 
-Welcome to the AEIS wiki. Explore the different sections:
+Welcome to the AEIS wiki. If this is your first time here, please read the AEIS group [Induction](induction.qmd) guide. Otherwise, explore the different sections below:
 
-- **[Induction](induction.qmd)**: Group induction guide.
-- **[Data](data.qmd)**: Our datasets, data pipelines, and storage guidelines for group research projects.
-- **[Tools](tools.qmd)**: Documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members.
-- **[Papers](papers.qmd)**: Some important research paper.
-- **[Group Meetings](group-meetings.qmd)**: General guidelines for group meeting presentations, journal club discussions, and more.
+- [Induction](induction.qmd): Group induction guide.
+- [Data](data.qmd): Our datasets, data pipelines, and storage guidelines for group research projects.
+- [Tools](tools.qmd): Documentation and tutorials for the software packages, models, scripts, and computational tools developed/used by group members.
+- [Papers](papers.qmd): Some important research papers.
+- [Writing](writing.qmd): Best practices for writing and other things.
+- [Courses](courses.qmd): Courses available at Imperial and our reviews.
+- [Sustainability](sustainability.qmd): AEIS sustainability practices.
+- [Group Meetings](group-meetings.qmd): General guidelines for group meeting presentations, journal club discussions, and more.
