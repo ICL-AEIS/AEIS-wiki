@@ -1,38 +1,10 @@
 [
   {
-    "objectID": "induction.html",
-    "href": "induction.html",
-    "title": "Induction",
-    "section": "",
-    "text": "Group induction guide."
-  },
-  {
-    "objectID": "induction.html#sec-plot",
-    "href": "induction.html#sec-plot",
-    "title": "Induction",
-    "section": "Plot",
-    "text": "Plot\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()"
-  },
-  {
-    "objectID": "induction.html#sec-equation",
-    "href": "induction.html#sec-equation",
-    "title": "Induction",
-    "section": "Equation",
-    "text": "Equation\n\\[\ns = \\sqrt{\\frac{1}{N-1} \\sum_{i=1}^N (x_i - \\overline{x})^2}\n\\tag{1}\\]"
-  },
-  {
     "objectID": "group-meetings.html",
     "href": "group-meetings.html",
     "title": "Group Meetings",
     "section": "",
     "text": "General guidelines for group meeting presentations, journal club discussions, and more."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About section."
   },
   {
     "objectID": "papers.html",
@@ -42,24 +14,94 @@
     "text": "Knuth says always be literate (Knuth 1984).\n\n\n\n\nReferences\n\nKnuth, Donald E. 1984. “Literate Programming.” The Computer Journal 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   },
   {
+    "objectID": "tools.html#sec-wrfs-components",
+    "href": "tools.html#sec-wrfs-components",
+    "title": "Tools",
+    "section": "WRF’s components",
+    "text": "WRF’s components\nThis is a brief outline. Read the user guide for more details.\nWRF is made up of two main components: the WRF Preprocessing System (WPS) and the actual WRF model.\nWPS includes:\n\ngeogrid: sets up the domain projection and ingests static fields from WPS-GEOG; creates geo_em.d01.nc, plus others if using nested domains\nungrib: processes grib files into some kind of intermediary format for WRF by extracting variables listed in the linked Vtable (e.g. Vtable.GFS); produces files like FILE:2019-01-01_00 for each time in the input data\nmetgrid: combines the geogrid and ungrib outputs into met_em.* NetCDF files\n\nWRF has multiple parts too, only two of which are useful for most people:\n\nreal: vertically interpolates the metgrid output (which is still on the same levels as the input data) to the specified model levels and creates wrfinput and wrfbdy files containing ICs and BCs respectively\nwrf: this is where you finally run the model - yay!\n\nWRF’s code is a mess, so I wouldn’t recommend diving into understanding it unless you have to. Instead, make sure to read pages like WRF Physics which include information on WRF’s schemes and options."
+  },
+  {
+    "objectID": "tools.html#installation",
+    "href": "tools.html#installation",
+    "title": "Tools",
+    "section": "Installation",
+    "text": "Installation\nThe tutorial and user guide provide decent instructions on compiling and running case studies.\nYou can decide whether you install your own versions of the WRF dependencies (like NetCDF) which the tutorial guides you through or use one installed on your system (e.g. CX3) if available. The benefit of using pre-installed ones is that you don’t have to struggle with inter-library and system compatibility. You don’t have to use MPICH as in the WRF tutorial; Open MPI also works and is the only one which works on CX3.\nYou must install WPS in order to run WRF with “real” data."
+  },
+  {
+    "objectID": "tools.html#using-era5-as-input-data",
+    "href": "tools.html#using-era5-as-input-data",
+    "title": "Tools",
+    "section": "Using ERA5 as input data",
+    "text": "Using ERA5 as input data\nGFS is the most common input data with which to run WRF, but ERA5 also works. As of 2026, the ECMWF Vtable is out of date, plus you need a file containing ERA5’s invariant fields (unless you download land mask, soil height, and soil geopotential with your ERA5 data) and an updated METGRID.TBL to do SST and skintemp interpolation correctly. All of these materials can be found here."
+  },
+  {
+    "objectID": "tools.html#troubleshooting",
+    "href": "tools.html#troubleshooting",
+    "title": "Tools",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nThis is a non-exhaustive list of the most common issues encountered with WRF. Please add as you see fit, but only remove if you are certain the issue is no longer relevant.\n\nLibraries\n\nnetcdf.inc doesn’t exist (required for library compatibility tests): NetCDF hasn’t built properly, look in the output.\nGeneral installation issues:\n\nEnsure FCFLAGS and FFLAGS are \"-m64 -fallow-argument-mismatch\".\nEnsure LDFLAGS points to library folders \"-L$NETCDF/lib -L$DIR/grib2/lib\".\nEnsure CPPFLAGS points to include folders \"-I$NETCDF/include -I$DIR/mpich/include -I$DIR/grib2/include -fcommon\".\n\ngcc: error: unrecognized command line option '-V': probably GCC version issue, never got to the bottom of it.\nThere’s a million and one problems, just keep reading the logs and googling.\nLots of problems are caused by library compatibilities with GCC, 12.3.0 worked in the end.\n\n\n\nCompiling WRF and WPS\n\nFails because number of CPUs exceeded: default is 2 so do ncpus=2 and add -j 2 to the command.\nIf reconfiguring/recompiling, run ./clean -a before ./configure.\nGeneral compilation issues:\n\nEnsure same GCC version is used for libraries and compilation.\n\n\n\n\nRunning WPS\nUngrib issues:\n\nCheck the correct Vtable is linked by doing realpath Vtable in the WPS folder. Should show the path to the true Vtable.\nUse ungrib.log to see which variables have been identified.\n\nGeogrid issues:\n\nGeogrid fails with ERROR: Error in ext_pkg_write_field (if namelist.wps has debug_level=1000, may also see WRF_DEBUG: NetCDF error: Operation not permitted): NetCDF hadn’t installed properly, check the library installation logs better! Even when it says “congratulations library installed”, sometimes things have failed.\n\nMetgrid issues:\n\nEnsure it’s reading in all ungribbed files you need at the same time with fg_name.\nERROR: Missing values encountered in interpolated fields. Stopping.: probably not meteorological data covering the whole domain. Make domain smaller or get extra data.\nIf using ERA5 data, ensure SST and skintemp are interpolated correctly. Get the ERA5_INVARIANT file and updated METGRID.TBL from here.\nCheck interpolation around land mask using ncview! There should be no borders with values ~1e30.\n\nGeneral issues:\n\nCheck namelist.wps has the right names in the right places, the namelist.wps.all_options file shows where they should be (N.B. the optional geogrid path is wrong online).\n\n\n\nRunning WRF\nreal.exe issues:\n\nnot enough info for a p sfc computation: If it also says ERROR in psfc: flag_psfc = 1, flag_soilhgt = 0, flag_slp = 0, sfcp_to_sfcp = F, you need to find mean sea level pressure (slp) values and include them in metgrid.\nnot enough eta levels to reach p_top: just make e_vert higher or lower p_top_requested as suggested in the output.\nCould not find level above ground: surface pressure is probably negative in some areas e.g. because the surface pressure used is from ERA5-Land so is not valid for sea. Fix this by using PSFC which is valid everywhere (e.g. from ERA5 hourly data on single levels).\ngrid%tsk unreasonable error and values of ~1e30: metgrid has interpolated the skin temperature values (which are over land) or the SST values (which are over water) badly or used the wrong mask for them. Ensure constants_name = 'ERA5_INVARIANT' is in &metgrid and use the METGRID_ERA5.TBL from here to correct masking. Even a non-fatal error in grid%tsk in rsl.out.0000 is still wrong! Suck it up, go back to metgrid, and fix it - even if wrfinput_d01 looks fine!\nProgram not doing anything: your code changes probably screwed everything, even if you only changed something you believed was part of wrf.exe.\n\nwrf.exe issues:\n\nFor running with multiple CPUs, MPI must be executed explicitly with mpiexec -np num_cpus ./wrf.exe. mpirun is used interchangeably with mpiexec. To check it has run with multiple CPUs, look for rsl files in the em_real folder.\nSegmentation fault: may be using too few cpus, the WRF forums say “((e_we)/100) * ((e_sn)/100) = least amount of processors you should use”\nProgram not doing anything: your code changes probably screwed everything.\nOther segmentation errors or floating point exceptions:\n\nSometimes input data issues\n\nGeneral issues:\n\nIf running MPI, do a square number of CPUs since WRF prefers this.\nYou can normally get away with using fewer CPUs than suggested, but change it if it crashes.\nEnsure time step follows \\(dt\\) (s) \\(\\leq 6 \\cdot dx\\) (km) and radiation time step follows \\(dt\\) (min) \\(\\leq dx\\) (km), though you can normally get away with higher.\nDon’t compile with full debugging option -D (i.e. with floating point exception errors etc) because the radar module will crash! Raised as an issue 2025-09-23 (see here). Even after this was fixed, the -D option is still prone to breaking. Try recompiling individual WRF files with debugging flags instead by identifying the compilation line in compile.log and adding debug flags to it."
+  },
+  {
+    "objectID": "induction.html",
+    "href": "induction.html",
+    "title": "Induction",
+    "section": "",
+    "text": "This page is intended to give an overview of the things everyone in AEIS, but in particular new members, should know.\nAEIS is a research group within the Department of Aeronautics at Imperial. We have group meetings once a week to either share updates or present to each other.\nEveryone in the group works on similar research, so this wiki contains our institutional knowledge which is useful to be shared between all of us. You may find information on the Data and Tools you use on those pages. You’ll also find tips on Writing and which Courses to take at Imperial.\nAEIS has a Junior Leadership Team (JLT) with has a lead and a deputy for each of the following topics:\n\nGroup Meetings\nData & Computation\nSustainability\n\nYou can find more information on them here.\n\nHardware, compute, and data surveys\nThe Data & Computation and Sustainability leads send out a hardware, compute, and data survey to the group every three months. This helps us keep a track of things like:\n\nWhat computational resources we’re using\nWhat data we’re storing\nWhether we need support to make our computation easier\nWhether there are any steps we can take to share information or consolidate resources\n\nIt helps make our work more focused and sustainable and is part of our Green DiSC requirements, so please do engage with it when reminded!\n\n\nData storage cleaning\nSimilar to above, the Data & Computation and Sustainability leads conduct data storage cleaning every three months. During this, each member of the group organises their storage directories (end-user, HPC, and cloud), identifies and deletes data they no longer need, and consolidates or minimises data they do need where possible.\nThis also helps make our work more focused and sustainable and is part of our Green DiSC requirements.\n\n\nComputational sustainability\nPlease familiarise yourself with the best practices for computational sustainability. It’s best to put these practices in place as soon as possible because it’s not only more sustainable, but makes your work easier too. It also helps make the hardware, compute, and data survey plus data storage cleaning quicker!\n\n\nWellbeing\nIf you need support or have concerns about anything or anyone including people within AEIS, there are lots of people at Imperial who can help you. Here are some details you might find useful.\nGeneral:\n\nThere are mental health first aiders across the department including\n\nLisa Kelly - l.kelly@imperial.ac.uk\nJackie O’Neill - j.oneill@imperial.ac.uk\nProfessor Joaquim Peiro - j.peiro@imperial.ac.uk\n\nCollege-wide mental health first aiders\nDepartment of Aeronautics staff wellbeing page\n\nPhD students:\n\nStudent wellbeing adviser: Joe Kilbride, j.kilbride@imperial.ac.uk, Level 1, Room 141B, CAGB\nPostgraduate research senior tutor: Professor Joaquim Peiro, j.peiro@imperial.ac.uk\nTutor for women: Dr Maria Ribera Vicent, m.ribera-vicent@imperial.ac.uk\nFaculty of Engineering confidential support for BAME students: Naomi Jackson-Macfarlane, n.jackson-macfarlane@imperial.ac.uk\nStudent representatives\nDepartment of Aeronautics postgraduate student wellbeing page\n\nFinally, PhD Donuts takes place once a month for PhD students (very important for wellbeing) and there’s a coffee machine in both the Level 3 staff room and the kitchenette on Level 1."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "AEIS wiki",
     "section": "",
-    "text": "Welcome to the AEIS wiki. Explore the different sections:\n\nInduction: Group induction guide.\nData: Our datasets, data pipelines, and storage guidelines for group research projects.\nTools: Documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members.\nPapers: Some important research paper.\nGroup Meetings: General guidelines for group meeting presentations, journal club discussions, and more."
+    "text": "Welcome to the AEIS wiki. If this is your first time here, please read the AEIS group Induction guide. Otherwise, explore the different sections below:\n\nInduction: Group induction guide.\nData: Our datasets, data pipelines, and storage guidelines for group research projects.\nTools: Documentation and tutorials for the software packages, models, scripts, and computational tools developed/used by group members.\nPapers: Some important research papers.\nWriting: Best practices for writing and other things.\nCourses: Courses available at Imperial and our reviews.\nSustainability: AEIS sustainability practices.\nGroup Meetings: General guidelines for group meeting presentations, journal club discussions, and more."
   },
   {
-    "objectID": "tools.html",
-    "href": "tools.html",
-    "title": "Tools",
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "Writing",
     "section": "",
-    "text": "Here you will find documentation and tutorials for the software packages, scripts, and computational tools developed/used by group members."
+    "text": "Best practices for writing and other things."
   },
   {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data",
+    "objectID": "courses.html",
+    "href": "courses.html",
+    "title": "Courses",
     "section": "",
-    "text": "This section provides access to our datasets, data pipelines, and storage guidelines."
+    "text": "Imperial offers a range of courses for staff and students including the Thriving at Imperial courses and the Early Career Researcher Institute (ECRI) courses.\nPhD students are required to gain at least 4 ECRI credits before their Late Stage Review (LSR) including 2 by their Early Stage Assessment (ESA).\nThe following are courses taken by members of the group with reviews.\n\n  Basic Statistics\n  \n    Provider: ECRI\n    Course Website →\n  \n  \n  \n    \n      ★\n      ★\n      ★\n      ★\n      ★\n    \n    2.0/5.0\n    (2 reviews)\n  \n  \n  \n    \n      \n        Alice\n        September 2026\n        \n      ★\n      ★\n      ★\n      ★\n      ★\n        \n      \n      \n        Was fine.\n      \n    \n    \n    \n      \n        Bob\n        August 2026\n        \n      ★\n      ★\n      ★\n      ★\n      ★\n        \n      \n      \n        I hate stats"
+  },
+  {
+    "objectID": "sustainability.html",
+    "href": "sustainability.html",
+    "title": "Sustainability",
+    "section": "",
+    "text": "AEIS is committed to environmental sustainability. As a group, we aim to minimise the environmental impact of aviation using computational methods, so it is important to us to ensure the environmental benefits of producing our research (such as improvements in technology and changes in policy) outweigh the negative environmental impacts. For this reason, we have guidelines for AEIS group members to follow in two of the most relevant areas: Computation and Travel.\nContact the current AEIS group sustainability lead if you have any questions. If you don’t know who it is, ask Seb or another member of the group! It is the sustainability lead’s role to develop, disseminate, and encourage sustainable practices in the group and to pursue sustainability accreditation."
+  },
+  {
+    "objectID": "sustainability.html#best-practices",
+    "href": "sustainability.html#best-practices",
+    "title": "Sustainability",
+    "section": "Best practices",
+    "text": "Best practices\nIf you have suggestions for tips to be added to this list, contact the sustainability lead!\n\nDon’t replace devices unless necessary\nUse your devices for longer. Even delaying a laptop upgrade for 1 or 2 years has an impact. Also, if your device breaks, try to get it repaired and source used or refurbished devices where possible.\n\n\nOptimise your code\nIf you’ve written some code which is computationally demanding or that you’ll run for a long time, spend some time trying to make it more efficient. A more efficient program also means you get your results faster and can add up in the long term! GenAI models can be helpful for this.\n\n\n\n\n\n\nCautionThe Jevons paradox: Greater efficiency -&gt; greater consumption?\n\n\n\n\n\nThe Jevons paradox is the phenomenon whereby increasing the efficiency of a resource’s use increases the overall consumption of the resource. It has been seen observed over more than a century in various fields such as the increase in efficiency of coal use which made coal more attractive as a fuel and so increased its consumption. In your work, don’t let the improved efficiency of your code be an excuse for running it unnecessarily!\n\n\n\n\n\nDebug on a small scale\nMore details on this soon.\n\n\nOnly run simulations and data analysis once\nIt can be tempting to make small changes to models, pipelines, or data analysis which mean you need to run computationally expensive code again. Instead, consider carefully whether your code is finished before you run it and test your code on a small amount of data first to check it works. There are often things you’ll remember or discover which mean you don’t have to rerun expensive code.\n\n\nOnly store the data you need\nIt’s easy to let data pile up which you don’t need to keep. As a reference, storing 1 TB of data on the cloud consumes an estimated 40 to 70 kWh per year which is equivalent to running a modern refrigerator for an entire month (source, though I’ll look for better ones).\nWhere possible, don’t store preprocessed data when you have already processed the results and avoid storing multiple copies of the same data.\nAEIS runs quarterly data storage cleaning to encourage good practice.\n\n\nCalculate your computational carbon footprint\nThe Green Algorithms calculator compares the carbon footprint of your code to tree-months of carbon sequestration, kilometres in a car, and fraction of a flight. It can help to have a reference point for the computational work you do so that we better understand the impact we’re having. Give it a try with the details of a job you’ve run.\n\n\nGenAI\nGenerative AI (GenAI) is an invaluable tool to many of us. It is particularly useful for optimising your code. We will have more details on how to use GenAI effectively and how to account for its environmental impact soon."
+  },
+  {
+    "objectID": "sustainability.html#green-disc",
+    "href": "sustainability.html#green-disc",
+    "title": "Sustainability",
+    "section": "Green DiSC",
+    "text": "Green DiSC\nGreen DiSC (Digital Sustainability Certification) is an open-access scheme led by the University of Cambridge. It is designed to encourage people working in research to consider and minimise their computational environmental impact. It has three targets: research groups, research computing infrastructure teams, and central teams, of which the first is relevant to us. The certification has (or will have) three levels: Bronze, Silver, and Gold.\nIts priorities for research groups are:\n\nPurchasing and e-waste policies\nComputing hardware and infrastructure inventory\nComputational resource use\nDataset inventory and regular data storage cleaning\nKnowledge amongst group members of best practices for computational sustainability (see Best practices!)\n\nTimeline:\n\nJuly 2026: Jack Bartlett enrolled AEIS with Green DiSC.\nNovember 2026: Apply for Green DiSC Bronze certification.\n\nSeb is the group’s Green DiSC representative, but the sustainability lead and deputy are in charge of pursuing the certification.\nUseful links:\n\nGreen DiSC homepage\nGreen DiSC GitHub\nGreen Algorithms"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "AEIS (the Aerospace Environmental Impacts Simulation group, pronounced “ace”) is a research group within the Department of Aeronautics, Faculty of Engineering, at Imperial. We use models and observations to understand and reduce the impacts of aviation on the environment.\nYou can find more information about AEIS, our members, and what we get up to on our Imperial webpage.\nInformation on group meetings can be found here."
+  },
+  {
+    "objectID": "about.html#people",
+    "href": "about.html#people",
+    "title": "About",
+    "section": "People",
+    "text": "People\nAEIS has two permanent staff members:\n\nSeb is the group leader.\nManuela is our project manager who oversees some of the projects in the group and generally keeps us organised.\n\nAEIS has a Junior Leadership Team (JLT) with three roles, each supported by a deputy:\n\nGroup Meetings: The Group Meetings lead organises group meetings and socials.\n\nLead: Marek\nDeputy: Caleb\n\nData & Computation: The Data & Computation lead promotes good data storage and computation practices and works with the Sustainability lead to audit the group’s hardware, compute, and data resources.\n\nLead: Hamid\nDeputy: Uttam\n\nSustainability: The Sustainability lead encourages environmentally sustainable practices within the group, works with the Data & Computation lead to audit the group’s hardware, compute, and data resources, and pursues Green DiSC certification.\n\nLead: Jack\nDeputy: Gavin\n\n\nThe JLT is appointed by Seb."
   }
 ]
