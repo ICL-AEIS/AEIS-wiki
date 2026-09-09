@@ -56,6 +56,8 @@ It's easy to let data pile up which you don't need to keep. As a reference, stor
 
 Where possible, don't store preprocessed data when you have already processed the results and avoid storing multiple copies of the same data. If someone else uses the same data, share a single copy with them which you can both read from.
 
+There are lots of tools which can help you identify data to delete such as [WizTree](https://diskanalyzer.com/download) on Windows and the `du` command on Linux. For a cross-platform tool designed for saving storage space, see [fss](https://github.com/jcbart/fss).
+
 AEIS runs quarterly [data storage cleaning](induction.qmd#data-storage-cleaning) to encourage good practice.
 
 ### Calculate your computational carbon footprint

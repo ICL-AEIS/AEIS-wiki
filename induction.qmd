@@ -16,6 +16,20 @@ AEIS has a Junior Leadership Team (JLT) with has a lead and a deputy for each of
 
 You can find more information on them [here](about.qmd#jlt).
 
+# Offices, key cards, and desks
+
+The AEIS group is currently split across a few offices, but we'll hopefully be consolidated into 210 in the near future.
+
+When you join, someone from the Aeronautics administration team (likely [Lisa](mailto:l.kelly@imperial.ac.uk) if you're staff or [Clodagh](mailto:c.li@imperial.ac.uk) if you're a PhD student, both in 318) will find you a desk and give access to your Imperial ID card. If you have issues, ask one of them or another member of the group. The department famously has a never-ending struggle to find desk space for everyone, so don't be concerned if it takes a while.
+
+# Expenses
+
+You can find most of the information you need to know about expenses on the [department website](https://www.imperial.ac.uk/aeronautics/local/finance/expenses/). If you have questions about expenses, you can ask Ela at [aero.finance@imperial.ac.uk](mailto:aero.finance@imperial.ac.uk).
+
+You can make claims for small expenses by following the guidelines above.
+
+For travel expenses, you should ask Ela ([aero.finance@imperial.ac.uk](mailto:aero.finance@imperial.ac.uk)) to register you with the College's travel provider Egencia. To book travel with Egencia, request a Purchase Order (PO) number from Ela by sending a screenshot from Egencia with the travel details (including dates, price, etc), details on the purpose of the travel, and the account code which should be charged. If you don't know your travel account code, again ask Ela. PhD students should CC Seb in the PO email.
+
 # Hardware, compute, and data surveys
 
 The Data & Computation and Sustainability leads send out a hardware, compute, and data survey to the group every three months. This helps us keep a track of things like:
@@ -44,18 +58,18 @@ If you need support or have concerns about anything or anyone including people w
 **General:**
 
 - There are mental health first aiders across the department including
-    - Lisa Kelly - [l.kelly@imperial.ac.uk](l.kelly@imperial.ac.uk)
-    - Jackie O’Neill - [j.oneill@imperial.ac.uk](j.oneill@imperial.ac.uk)
-    - Professor Joaquim Peiro - [j.peiro@imperial.ac.uk](j.peiro@imperial.ac.uk)
+    - Lisa Kelly - [l.kelly@imperial.ac.uk](mailto:l.kelly@imperial.ac.uk)
+    - Jackie O’Neill - [j.oneill@imperial.ac.uk](mailto:j.oneill@imperial.ac.uk)
+    - Professor Joaquim Peiro - [j.peiro@imperial.ac.uk](mailto:j.peiro@imperial.ac.uk)
 - [College-wide mental health first aiders](https://www.imperial.ac.uk/health-and-wellbeing/mental-health/mental-health-first-aid/)
 - [Department of Aeronautics staff wellbeing page](https://www.imperial.ac.uk/engineering/departments/aeronautics/wellbeing/staff/)
 
 **PhD students:**
 
-- Student wellbeing adviser: Joe Kilbride, [j.kilbride@imperial.ac.uk](j.kilbride@imperial.ac.uk), Level 1, Room 141B, CAGB
-- Postgraduate research senior tutor: Professor Joaquim Peiro, [j.peiro@imperial.ac.uk](j.peiro@imperial.ac.uk)
-- Tutor for women: Dr Maria Ribera Vicent, [m.ribera-vicent@imperial.ac.uk](m.ribera-vicent@imperial.ac.uk)
-- Faculty of Engineering confidential support for BAME students: Naomi Jackson-Macfarlane, [n.jackson-macfarlane@imperial.ac.uk](n.jackson-macfarlane@imperial.ac.uk)
+- Student wellbeing adviser: Joe Kilbride, [j.kilbride@imperial.ac.uk](mailto:j.kilbride@imperial.ac.uk), Level 1, Room 141B, CAGB
+- Postgraduate research senior tutor: Professor Joaquim Peiro, [j.peiro@imperial.ac.uk](mailto:j.peiro@imperial.ac.uk)
+- Tutor for women: Dr Maria Ribera Vicent, [m.ribera-vicent@imperial.ac.uk](mailto:m.ribera-vicent@imperial.ac.uk)
+- Faculty of Engineering confidential support for BAME students: Naomi Jackson-Macfarlane, [n.jackson-macfarlane@imperial.ac.uk](mailto:n.jackson-macfarlane@imperial.ac.uk)
 - Student representatives
 - [Department of Aeronautics postgraduate student wellbeing page](https://www.imperial.ac.uk/aeronautics/wellbeing/pg/)
 

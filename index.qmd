@@ -12,3 +12,5 @@ Welcome to the AEIS wiki. If this is your first time here, please read the AEIS 
 - [Courses](courses.qmd): Courses available at Imperial and our reviews.
 - [Sustainability](sustainability.qmd): AEIS sustainability practices.
 - [Group Meetings](group-meetings.qmd): General guidelines for group meeting presentations, journal club discussions, and more.
+
+If you find mistakes or want to make changes to this wiki, go to the GitHub repo or ask a member of the [JLT](about.qmd#jlt).
