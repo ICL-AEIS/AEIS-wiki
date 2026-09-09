@@ -14,7 +14,7 @@ AEIS has a Junior Leadership Team (JLT) with has a lead and a deputy for each of
 - Data & Computation
 - Sustainability
 
-You can find more information on them [here](about.qmd#people).
+You can find more information on them [here](about.qmd#jlt).
 
 # Hardware, compute, and data surveys
 
@@ -35,7 +35,7 @@ This also helps make our work more focused and sustainable and is part of our [G
 
 # Computational sustainability
 
-Please familiarise yourself with the [best practices for computational sustainability](sustainability.qmd#best-practices). It's best to put these practices in place as soon as possible because it's not only more sustainable, but makes your work easier too. It also helps make the hardware, compute, and data survey plus data storage cleaning quicker!
+Please familiarise yourself with the [best practices for computational sustainability](sustainability.qmd#best-practices). It's best to put these practices in place as soon as possible because it's not only more sustainable, but makes your work easier too. It will also make the hardware, compute, and data survey plus data storage cleaning simpler!
 
 # Wellbeing
 

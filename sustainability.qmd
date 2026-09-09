@@ -4,11 +4,11 @@ title: "Sustainability"
 
 AEIS is committed to environmental sustainability. As a group, we aim to minimise the environmental impact of aviation using computational methods, so it is important to us to ensure the environmental benefits of producing our research (such as improvements in technology and changes in policy) outweigh the negative environmental impacts. For this reason, we have guidelines for AEIS group members to follow in two of the most relevant areas: [Computation](#computation) and [Travel](#travel).
 
-Contact the current AEIS group sustainability lead if you have any questions. If you don't know who it is, ask Seb or another member of the group! It is the sustainability lead's role to develop, disseminate, and encourage sustainable practices in the group and to pursue sustainability accreditation.
+Contact the current AEIS group sustainability lead if you have any questions (see [JLT](about.qmd#jlt)). It is the sustainability lead's role to develop, disseminate, and encourage sustainable practices in the group and to pursue sustainability accreditation.
 
 # Computation
 
-Computation, particularly HPC, and data storage can have a substantial impact, but we don't want to limit the quality of research we produce. For this reason, we have developed a set of best practices and we are pursuing Green DiSC certification.
+Computation, particularly HPC, and data storage can have a substantial impact, but we don't want to limit the quality of research we produce. For this reason, we have developed a set of [best practices](#best-practices) and we are pursuing [Green DiSC](#green-disc) certification.
 
 ## Best practices
 
@@ -25,12 +25,26 @@ If you've written some code which is computationally demanding or that you'll ru
 ::: {.callout-caution collapse="true"}
 ## The Jevons paradox: Greater efficiency -> greater consumption?
 
-[The Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox) is the phenomenon whereby increasing the efficiency of a resource's use increases the overall consumption of the resource. It has been seen observed over more than a century in various fields such as the increase in efficiency of coal use which made coal more attractive as a fuel and so increased its consumption. In your work, don't let the improved efficiency of your code be an excuse for running it unnecessarily!
+[The Jevons paradox](https://en.wikipedia.org/wiki/Jevons_paradox) is the phenomenon whereby increasing the efficiency of a resource's use increases the overall consumption of the resource. It has been seen observed for more than a century in various fields such as the increase in efficiency of coal use which made coal more attractive as a fuel and so increased its consumption. In your work, don't let the improved efficiency of your code be an excuse for running it unnecessarily!
 :::
 
 ### Debug on a small scale
 
-More details on this soon.
+When you've written a new model or some complex new code, you should debug it on a small scale before attempting to run it fully.
+
+**Compile with debug flags** (for compiled code). Search for the options available for your compiler. For example, GCC users can use [this page](https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html). CMake has cross-platform default flags which it uses when you use the argument `-DCMAKE_BUILD_TYPE=Debug`, but you can also customise them with `set(CMAKE_CXX_FLAGS_DEBUG [YOUR FLAGS])`. Other build platforms typically have debug options built in.
+
+**Test your code on a subset of input data** when you first run it. This way, you won't waste resources and energy finding the same bugs.
+
+**Profile your code** to pinpoint bottlenecks with tools such as [cProfile](https://docs.python.org/3/library/profile.html), [py-spy](https://github.com/benfred/py-spy), and [perf](https://perfwiki.github.io/main/). Add these tools into your workflow early so it feels natural and easy to do every time you need it.
+
+**Use a debugger** if things are going wrong in your tests. Debuggers like [GDB](https://sourceware.org/gdb/) and [Valgrind](https://valgrind.org/) can be lifesavers in identifying segmentation faults, memory corruption, and fatal errors. You can set breakpoints and check the value of variables during runtime.
+
+Once you've done this, you'll be ready to scale up with confidence.
+
+### Request the resources you need
+
+This applies to people using HPC platforms. It can be hard to know the resource needs of your code before you first run it, but once you have run it successfully, you can find out what resources it uses in the job logs (CPU percentage, memory usage, and runtime). Use this information to update your requests for the next time.
 
 ### Only run simulations and data analysis once
 
@@ -40,7 +54,7 @@ It can be tempting to make small changes to models, pipelines, or data analysis 
 
 It's easy to let data pile up which you don't need to keep. As a reference, storing 1 TB of data on the cloud consumes an estimated 40 to 70 kWh per year which is equivalent to running a modern refrigerator for an entire month ([source, though I'll look for better ones](https://www.ecoflow.com/us/blog/energy-cost-cloud-storage)).
 
-Where possible, don't store preprocessed data when you have already processed the results and avoid storing multiple copies of the same data.
+Where possible, don't store preprocessed data when you have already processed the results and avoid storing multiple copies of the same data. If someone else uses the same data, share a single copy with them which you can both read from.
 
 AEIS runs quarterly [data storage cleaning](induction.qmd#data-storage-cleaning) to encourage good practice.
 

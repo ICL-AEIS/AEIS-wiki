@@ -8,14 +8,18 @@ You can find more information about AEIS, our members, and what we get up to on 
 
 Information on group meetings can be found [here](group-meetings.qmd). 
 
-## People
+# People
+
+## Permanent staff
 
 AEIS has two permanent staff members:
 
-- **Seb** is the group leader.
-- **Manuela** is our project manager who oversees some of the projects in the group and generally keeps us organised.
+- [Seb](https://profiles.imperial.ac.uk/s.eastham) is the group leader.
+- [Manuela](https://profiles.imperial.ac.uk/m.claite) is our project manager who oversees some of the projects in the group and generally keeps us organised.
 
-AEIS has a Junior Leadership Team (JLT) with three roles, each supported by a deputy:
+## JLT
+
+AEIS has a Junior Leadership Team (JLT) with three roles, each supported by a deputy. The JLT is responsible for some of the day to day running of the group as well as progressing towards long term goals to make our group more effective (and fun). The JLT is appointed by Seb and the roles switch every six months.
 
 - **Group Meetings**: The Group Meetings lead organises group meetings and socials.
     - **Lead**: Marek
@@ -23,8 +27,6 @@ AEIS has a Junior Leadership Team (JLT) with three roles, each supported by a de
 - **Data & Computation**: The Data & Computation lead promotes good data storage and computation practices and works with the Sustainability lead to audit the group's hardware, compute, and data resources.
     - **Lead**: Hamid
     - **Deputy**: Uttam
-- **Sustainability**: The Sustainability lead encourages environmentally sustainable practices within the group, works with the Data & Computation lead to audit the group's hardware, compute, and data resources, and pursues [Green DiSC](https://www.software.ac.uk/GreenDiSC) certification.
+- **Sustainability**: The Sustainability lead encourages environmentally sustainable practices within the group, works with the Data & Computation lead to audit the group's hardware, compute, and data resources, and pursues [Green DiSC](sustainability.qmd#green-disc) certification.
     - **Lead**: Jack
     - **Deputy**: Gavin
-
-The JLT is appointed by Seb.
