@@ -4,6 +4,48 @@ title: "Tools"
 
 # Contrail Cirrus Prediction tool (CoCiP)
 
+The Contrail Cirrus Prediction Model (CoCiP), introduced by Schumann [@schumann2012contrail], is a Lagrangian model that simulates the life cycle of individual contrail segments formed by aircraft.
+
+For each flight waypoint, CoCiP determines whether contrails form using the Schmidt-Appleman criterion. It then tracks each contrail segment forward in time as it advects with local winds, spreads through turbulence and wind shear, exchanges water vapor in ice-supersaturated air, and eventually dissipates through sublimation.
+
+::: {.callout-note}
+## Input requirements
+Running CoCiP requires two distinct inputs:
+
+1. **Flight trajectories**: Waypoints containing timestamp, latitude, longitude, altitude, and aircraft or engine type.
+2. **Meteorological fields**: Weather data (temperature, humidity, pressure, and wind components) on pressure levels around cruise altitudes.
+:::
+
+## Python implementation: pycontrails
+
+In Python, the standard implementation of CoCiP is provided by [pycontrails](https://py.contrails.org/).
+
+`pycontrails` is an open-source library maintained by Contrails.org and the Breakthrough Energy Foundation. It implements CoCiP alongside aircraft performance models and provides data connectors for meteorological datasets like ERA5.
+
+To install the library:
+
+```bash
+pip install pycontrails
+```
+
+Basic usage involves passing flight trajectories and meteorological data (loaded via `xarray`) to the model:
+
+```python
+from pycontrails import Flight
+from pycontrails.models.cocip import Cocip
+
+# Initialize model with meteorological grid
+cocip = Cocip(met=met_dataset, rad=rad_dataset)
+
+# Run model on flight waypoint data
+output = cocip.eval(flight)
+```
+
+::: {.callout-tip}
+## Getting started
+Check the [pycontrails documentation](https://py.contrails.org/) and their [interactive examples](https://github.com/contrailcirrus/pycontrails/tree/main/docs/notebooks) for end-to-end notebooks showing how to download ERA5 data, parse flight tracks, and run CoCiP.
+:::
+
 # Aircraft Plume Chemistry, Emissions, and Microphysics Model (APCEMM)
 
 # Weather Research & Forecasting model (WRF)
@@ -130,4 +172,4 @@ General issues:
 	- Don't compile with full debugging option `-D` (i.e. with floating point exception errors etc) because the radar module will crash! Raised as an issue 2025-09-23 (see [here](https://github.com/wrf-model/WRF/issues/2248)). Even after this was fixed, the `-D` option is still prone to breaking. Try recompiling individual WRF files with debugging flags instead by identifying the compilation line in `compile.log` and adding debug flags to it.
 
 # Earth System Modeling Framework (ESMF)
-
+Earth system modeling frameworks 

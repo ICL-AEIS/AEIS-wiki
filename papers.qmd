@@ -2,4 +2,10 @@
 title: "Papers"
 ---
 
-Knuth says always be literate [@knuth1984].
+# Contrails
+
+- **On conditions for contrail formation from aircraft exhausts**: Schumann [@schumann1996conditions] provides the thermodynamic derivation of the Schmidt-Appleman criterion. The paper establishes the equations that determine whether an expanding exhaust plume reaches water saturation during mixing.
+- **A contrail cirrus prediction model**: Schumann [@schumann2012contrail] introduces the Contrail Cirrus Prediction Model (CoCiP). The paper details the framework used to track contrail segments, simulating their microphysical development.
+- **Contrail modeling and simulation**: Paoli and Shariff [@paoli2016contrail] provide a review paper that covers the fluid dynamics and microphysics of contrails across scales.
+- **The contribution of global aviation to anthropogenic climate forcing for 2000 to 2018**: Lee et al. [@lee2021contribution] assess the global climate impact of aviation from 2000 to 2018. The study calculates effective radiative forcing, identifying contrail cirrus as the largest individual contributor to aviation net warming.
+
