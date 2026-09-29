@@ -32,7 +32,7 @@ For travel expenses, you should ask Ela ([aero.finance@imperial.ac.uk](mailto:ae
 
 # Hardware, compute, and data surveys
 
-The Data & Computation and Sustainability leads send out a hardware, compute, and data survey to the group every three months. This helps us keep a track of things like:
+The Data & Computation and Sustainability leads send out a hardware, compute, and data survey to the group every three months. This helps us keep track of things like:
 
 - What computational resources we're using
 - What data we're storing
