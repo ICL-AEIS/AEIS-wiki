@@ -52,7 +52,7 @@ It can be tempting to make small changes to models, pipelines, or data analysis 
 
 ### Only store the data you need
 
-It's easy to let data pile up which you don't need to keep. As a reference, storing 1 TB of data on the cloud consumes an estimated 40 to 70 kWh per year which is equivalent to running a modern refrigerator for an entire month ([source, though I'll look for better ones](https://www.ecoflow.com/us/blog/energy-cost-cloud-storage)).
+It's easy to let data pile up which you don't need to keep. As a reference, storing 1 TB of data on the cloud consumes an estimated 40 to 70 kWh per year which is equivalent to running a modern refrigerator for an entire month (see [1](https://www.ecoflow.com/us/blog/energy-cost-cloud-storage) and [2](https://greenly.earth/en-gb/blog/industries/what-is-the-carbon-footprint-of-data-storage)).
 
 Where possible, don't store preprocessed data when you have already processed the results and avoid storing multiple copies of the same data. If someone else uses the same data, share a single copy with them which you can both read from.
 
