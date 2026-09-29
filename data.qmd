@@ -10,4 +10,87 @@ title: "Data"
 
 # ERA5
 
+ERA5 is the fifth-generation ECMWF atmospheric reanalysis. It provides hourly estimates of global climate and weather variables from 1940 to the present, on a 0.25° grid (~31 km resolution) across surface and pressure levels.
+
+For specifications and variable lists, see the [Copernicus Climate Data Store (CDS)](https://cds.climate.copernicus.eu/) and the [ECMWF ERA5 documentation](https://confluence.ecmwf.int/display/CKB/ERA5).
+
+## Setup
+
+Data access runs through the CDS API. You need a free user account and an API token.
+
+1. Register on the [Copernicus CDS portal](https://cds.climate.copernicus.eu/).
+2. Log in and open your profile page to find your personal access token.
+3. Create a `.cdsapirc` file in your home directory:
+   - Linux/macOS: `~/.cdsapirc`
+   - Windows: `%USERPROFILE%\.cdsapirc` (usually `C:\Users\<username>\.cdsapirc`)
+
+The file needs the following entries:
+
+```ini
+url: https://cds.climate.copernicus.eu/api
+key: <your-personal-access-token>
+```
+
+4. Accept dataset terms in the browser:
+
+::: {.callout-caution}
+## Accept Terms of Use before running API requests
+API queries fail immediately if you have not accepted the dataset terms in your browser. Open the target dataset page (such as [ERA5 hourly single levels](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels)), scroll to the bottom of the download tab, and accept the licence agreements.
+:::
+
+5. Install the Python client:
+
+```bash
+pip install "cdsapi>=0.7.7"
+```
+
+For platform-specific troubleshooting and details, refer to the [official CDS API documentation](https://cds.climate.copernicus.eu/how-to-api).
+
+
+## Python retrieval example
+
+The script below downloads 2m temperature and total precipitation for a single day over a bounding box:
+
+```python
+import cdsapi
+
+client = cdsapi.Client()
+
+dataset = "reanalysis-era5-single-levels"
+request = {
+    "product_type": ["reanalysis"],
+    "variable": [
+        "2m_temperature",
+        "total_precipitation",
+    ],
+    "year": ["2023"],
+    "month": ["01"],
+    "day": ["01"],
+    "time": [
+        "00:00", "01:00", "02:00", "03:00", "04:00", "05:00",
+        "06:00", "07:00", "08:00", "09:00", "10:00", "11:00",
+        "12:00", "13:00", "14:00", "15:00", "16:00", "17:00",
+        "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
+    ],
+    "data_format": "netcdf",
+    "download_format": "unarchived",
+    "area": [60, -10, 50, 2],  # [North, West, South, East]
+}
+target = "era5_sample.nc"
+
+client.retrieve(dataset, request, target)
+```
+
+## Practical tips
+
+::: {.callout-tip}
+## Generate request code from the web form
+Instead of writing query dictionaries from scratch, select your variables, dates, and geographic bounds on the CDS dataset page, then click **Show API request code** at the bottom of the form.
+:::
+
+- **Crop to your region**: Default queries return the full globe. Specifying `area: [North, West, South, East]` keeps file sizes manageable and speeds up server-side extraction.
+- **Split large requests**: Downloading years of hourly data in one request leads to queue timeouts or deprioritisation. Split downloads into monthly or annual loops in your code.
+- **Select NetCDF for Python pipelines**: Use `data_format: "netcdf"` and `download_format: "unarchived"` for direct loading with `xarray`. GRIB files require local installations of `eccodes`.
+- **Track running jobs**: Check the [CDS request dashboard](https://cds.climate.copernicus.eu/requests) to monitor progress before resubmitting queued requests.
+
 # GAIA
