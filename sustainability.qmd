@@ -10,9 +10,11 @@ Contact the current AEIS group Sustainability lead if you have any questions (se
 
 Computation, particularly HPC, and data storage can have a substantial impact, but we don't want to limit the quality of research we produce. For this reason, we have developed a set of [best practices](#best-practices) and we are pursuing [Green DiSC](#green-disc) certification.
 
+If you are interested in learning more about computational sustainability, take the [Green Software Foundation's course](https://learn.greensoftware.foundation/).
+
 ## Best practices
 
-If you have suggestions for tips to be added to this list, contact the Sustainability lead!
+These best practices have been developed by us for the AEIS group, but they align closely with Imperial's [Seven Steps to ICT Sustainability](https://www.imperial.ac.uk/admin-services/ict/about-ict/sustainability/seven-steps/). If you have suggestions for tips to be added to this list, contact the Sustainability lead!
 
 ### Don't replace devices unless necessary
 
@@ -103,10 +105,18 @@ There is also a Postgraduate Sustainable Travel Fund which can help fund more su
 
 Steps to consider before travelling:
 
-1. **Do I need to travel there?** Would I benefit a similar amount by joining the event online? ([Section A 1](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/))
+1. **Do I need to travel there?**
+
+    Would I benefit a similar amount by joining the event online? ([Section A 1](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/))
+
 2. **Can I combine multiple trips into one by travelling between events or by taking a well deserved holiday at my destination?** ([Section A 3](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/))
-3. **Can I get there in a more sustainable way?** Train journeys may be more expensive than flying, but their CO2 emissions are considerably lower. Imperial's [Postgraduate Sustainable Travel Fund](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/) can help PhD students with the higher cost of train travel. For some journeys, train travel will take longer, but factoring in travel and waiting times on either side may make up for it, plus you can work during them. The College permits taking higher class rail travel to enable you to work more effectively ([Section B 1.3](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/)). The College prohibits flying domestically in the UK if the destination can be reached within 5 hours by train except in extenuating circumstances ([Section B 1.2](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/)).
+
+3. **Can I get there in a more sustainable way?**
+
+    Train journeys may be more expensive than flying, but their CO2 emissions are considerably lower. Imperial's [Postgraduate Sustainable Travel Fund](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/) can help PhD students with the higher cost of train travel. For some journeys, train travel will take longer, but factoring in travel and waiting times on either side may make up for it, plus you can work during them. The College permits taking higher class rail travel to enable you to work more effectively ([Section B 1.3](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/)). The College prohibits flying domestically in the UK if the destination can be reached within 5 hours by train except in extenuating circumstances ([Section B 1.2](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/)).
+
 4. **If I have to fly, can I fly non-stop even if it's more expensive?** ([Section B 2.2](https://www.imperial.ac.uk/sustainability/our-campuses/sustainable-travel/))
+
 5. **Can I fly in the morning so that the cooling effect of any resulting contrails is strongest ~~and so I can take pretty photos of them~~?**
 
 As of 2026, Imperial is considering a policy on carbon offsetting for travel, but nothing has yet been implemented.
