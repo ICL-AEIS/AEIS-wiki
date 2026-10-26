@@ -4,7 +4,7 @@ title: "Induction"
 
 This page is intended to give an overview of the things everyone in AEIS, but in particular new members, should know.
 
-AEIS is a research group within the Department of Aeronautics at Imperial. We have [group meetings](group-meetings.qmd) once a week to either share updates or present to each other.
+AEIS is a research group within the Department of Aeronautics at Imperial and affiliated with the [Brahmal Vasudevan Institute for Sustainable Aviation](https://www.imperial.ac.uk/brahmal-institute/). We have [group meetings](group-meetings.qmd) once a week to either share updates or present to each other.
 
 Everyone in the group works on similar research, so this wiki contains our institutional knowledge which is useful to be shared between all of us. You may find information on the [Data](data.qmd) and [Tools](tools.qmd) you use on those pages. You'll also find tips on [Writing](writing.qmd) and which [Courses](courses.qmd) to take at Imperial.
 
@@ -15,6 +15,26 @@ AEIS has a Junior Leadership Team (JLT) with has a lead and a deputy for each of
 - Sustainability
 
 You can find more information on them [here](about.qmd#jlt).
+
+# Imperial's training for new students and staff
+
+When you start, the College should give you the information you need and tell you where to find relevant training courses. The following links should be used as a non-exhaustive reminder as they may be incomplete. If you're not certain whether you have completed the correct training, ask another member of the group or the Aeronautics administration team ([Lisa](mailto:l.kelly@imperial.ac.uk) if you're staff or [Clodagh](mailto:c.li@imperial.ac.uk) if you're a PhD student, both in 318).
+
+PhD students:
+
+- [Student Essentials](https://www.imperial.ac.uk/students/new-students/student-essentials/)
+
+Staff:
+
+- [Imperial Essentials for Staff](https://www.imperial.ac.uk/staff/new-staff/essentials/)
+- [Research Integrity](https://www.imperial.ac.uk/human-resources/talent/courses-and-programmes/processes/research-integrity/)
+- [Trusted Research](https://www.imperial.ac.uk/research-and-innovation/research-office/research-security/research-security-training/trusted-research-e-learning/)
+
+# AEIS and Imperial websites
+
+The Imperial website hosts profiles for staff and PhD students. Read more about it and how to set yours up [here](https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/open-access/faq/imperial-profiles/).
+
+The AEIS group's project manager, Manuela, should contact you to add your profile to the [AEIS group website](https://www.imperial.ac.uk/aerospace-environmental-impacts/). You can choose what your AEIS profile links to, e.g. your Imperial profile or LinkedIn.
 
 # Offices, key cards, and desks
 
