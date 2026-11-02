@@ -71,6 +71,13 @@ This also helps make our work more focused and sustainable and is part of our [G
 
 Please familiarise yourself with the [best practices for computational sustainability](sustainability.qmd#best-practices). It's best to put these practices in place as soon as possible because it's not only more sustainable, but makes your work easier too. It will also make the hardware, compute, and data survey plus data storage cleaning simpler!
 
+Also, we encourage you to:
+
+- Read [The Seven Steps to ICT Sustainability](https://www.imperial.ac.uk/admin-services/ict/about-ict/sustainability/seven-steps/)
+- Take Imperial's [Digital Research Sustainability training](https://imperialcollegelondon.github.io/digital_research_sustainability_training/)
+- Take the [Green Software Foundation's course](https://learn.greensoftware.foundation/)
+- Take the [SPARKHub Digital Research Infrastructure course](https://sdratraining.sparkhub.eu/)
+
 # Wellbeing
 
 If you need support or have concerns about anything or anyone including people within AEIS, there are lots of people at Imperial who can help you. Here are some details you might find useful.

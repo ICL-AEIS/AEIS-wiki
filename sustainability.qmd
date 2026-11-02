@@ -10,7 +10,7 @@ Contact the current AEIS group Sustainability lead if you have any questions (se
 
 Computation, particularly HPC, and data storage can have a substantial impact, but we don't want to limit the quality of research we produce. For this reason, we have developed a set of [best practices](#best-practices) and we are pursuing [Green DiSC](#green-disc) certification.
 
-If you are interested in learning more about computational sustainability, take the [Green Software Foundation's course](https://learn.greensoftware.foundation/).
+If you are interested in learning more about computational sustainability, take Imperial's [Digital Research Sustainability training](https://imperialcollegelondon.github.io/digital_research_sustainability_training/), the [Green Software Foundation's course](https://learn.greensoftware.foundation/), and the [SPARKHub Digital Research Infrastructure course](https://sdratraining.sparkhub.eu/).
 
 ## Best practices
 
