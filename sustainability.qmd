@@ -2,7 +2,7 @@
 title: "Sustainability"
 ---
 
-AEIS is committed to environmental sustainability. As a group, we aim to minimise the environmental impact of aviation using computational methods, so it is important to us to ensure the environmental benefits of producing our research (such as improvements in technology and changes in policy) outweigh the negative environmental impacts. For this reason, we have guidelines for AEIS group members to follow in two of the most relevant areas: [Computation](#computation) and [Travel](#travel).
+AEIS is committed to environmental sustainability. As a group, we aim to minimise the environmental impact of aviation using computational methods, so it is important to us to ensure the environmental benefits of producing our research (such as improvements in technology and changes in policy) outweigh the negative environmental impacts. For this reason, we have guidelines for AEIS group members to follow in the most relevant areas: [Computation](#computation), [Reuse, Repair, Recycle (RRR)](#rrr-policy), and [Travel](#travel).
 
 Contact the current AEIS group Sustainability lead if you have any questions (see [JLT](about.qmd#jlt)). It is the Sustainability lead's role to develop, disseminate, and encourage sustainable practices in the group and to pursue sustainability accreditation.
 
@@ -70,6 +70,8 @@ The [Green Algorithms](https://www.green-algorithms.org/) calculator compares th
 
 Generative AI (GenAI) is an invaluable tool to many of us. It is particularly useful for optimising your code. Its environmental impact will vary depending on how you use it. As it becomes easier to quantify on an individual level, we may develop guidance on how to use GenAI effectively and how to account for its environmental impact in the future.
 
+In the meantime, try experimenting with the Green Software Foundation's [Agentic AI Cost & Carbon Explorer](https://green-software-foundation.github.io/reference-implementations/tools/gsf/agentic-ai-impact-explorer/).
+
 ## Green DiSC
 
 [Green DiSC](https://www.software.ac.uk/GreenDiSC) (Digital Sustainability Certification) is an open-access scheme led by the University of Cambridge. It is designed to encourage people working in research to consider and minimise their computational environmental impact. It has three targets: research groups, research computing infrastructure teams, and central teams, of which the first is relevant to us. The certification has (or will have) three levels: Bronze, Silver, and Gold.
@@ -94,6 +96,34 @@ Useful links:
 - [Green DiSC homepage](https://www.software.ac.uk/GreenDiSC)
 - [Green DiSC GitHub](https://github.com/Cambridge-Sustainable-Computing-Lab/greenDiSC)
 - [Green Algorithms](https://www.green-algorithms.org/)
+
+# RRR policy
+
+This is a summary of AEIS's Reuse, Repair, Recycle (RRR) policy. The full policy can be found in the JLT channel on Teams.
+
+This RRR guideline outlines what Imperial as a whole, the Aeronautics department, and we as the AEIS group do with computing hardware that is spare, broken, or needs to be disposed of. We will follow existing university or department-wide guidelines except where we believe we can improve upon what currently exists, or where we think a procedure could be made more bespoke for our group. In these cases, we will specify details in our AEIS procedures.
+
+**The takeaway:** The most important thing you can do when hardware breaks, or you're leaving, or you don't need it any longer is to tell the AEIS Sustainability lead or report it using another procedure below. It makes everyone's life easier and our campus more sustainable if devices aren't left on the side for someone else to clean up.
+
+## Imperial RRR procedures
+
+- Reuse: Warp It lets staff give away equipment to others internally (Imperial) and externally (other universities). However, while the Warp It page says electrical items can't go on the listings, the Waste Streams page says they can. We have also observed electrical equipment in the Warp It listings. So, we will check with Imperial Property Division to get clarification.
+- Recycle: ICT partners with Converge and Academia to refurbish where they can, but otherwise recycle equipment. They both have a zero landfill promise and provide a certificate of disposal. Depending on the age and condition, they offer to offset against the cost of new devices or services. Through the Property Division's Report or Request portal, an approved contractor can also, using an approved contractor for a small fee, help to recycle or dispose of IT electrical equipment. It requires the asset number or serial number of the item to be dispose of.
+- Repair: ICT-managed laptops have 5-year warranties. This means broken laptops within those warranty periods should go to ICT Service Desk first for repair.
+
+## Department RRR procedures
+
+While there is currently no formal RRR departmental policy, as they are in the process of formulating it, the following are the current interim procedures.
+
+- Reuse/repair and recycle: departmental professional services staff (currently Clodagh and Lisa) periodically collate unused computing equipment from the PhD/postdoc rooms. If you have something to be repaired or recycled, make things easy by informing them you have something to be collected. The Head of Technical Operations and Safety (Nigel) then reuses some of it to fix laboratory computers, with the rest sent to the Waste Electrical and Electronic Equipment (WEEE) process.
+
+## AEIS RRR procedures
+
+- Inventory: all electrical equipment owned by the group is on the group hardware inventory, with its asset or serial number denoted. This inventory is repeated quarterly.
+- Reuse: if you are leaving the college or you don't need a device any longer, tell the AEIS Sustainability lead! Electrical items will be reused inside the group first, so spare working equipment goes into the group pool (exact location to be agreed) and gets marked as spare, with a separate tab on the inventory database to show this equipment is available. Anyone who needs a laptop, monitor, keyboard, drive, etc. including new starters can check the list. New starters will also be required to ask in our group Teams channel if there are any spare computing hardware before buying anything new. Group leavers will hand equipment back to the Sustainability lead or the group PI, so as not to leave equipment in the office. If no one in the group claims the spare equipment after about a month, it gets passed on in the following order: i) Aero for department reuse, ii) Imperial-wide reuse ICT partners (Converge, Academia, Warp It if allowed), ii) Recycling (see below).
+- Recycling: this is the last resort option, again through ICT’s partners or the Property Division. This will be done on a half-yearly basis to save items up into one request to keep fees and number of collections down. No electrical equipment should ever go into the general waste.
+- Residual data: before leavers return equipment, any important data is backed up before devices are wiped.
+- Equipment monitoring: every time an item leaves or moves from one person to another, the Sustainability lead writes in the inventory the date and where or to whom it was sent, which will serve as evidence that this process is being followed.
 
 # Travel
 
